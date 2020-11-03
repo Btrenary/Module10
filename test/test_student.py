@@ -16,7 +16,12 @@ class MyTestCase(unittest.TestCase):
 
 
     def test_object_created_all_attributes(self):
-        self.assertEqual(True, False)
+        student = t.Student('Trenary', 'Brady', 'CIS', 4.0)
+        assert student.last_name == 'Trenary'
+        assert student.first_name == 'Brady'
+        assert student.major == 'CIS'
+        assert student.gpa == 4.0
+
 
     def test_student_str(self):
         self.assertEqual(True, False)
