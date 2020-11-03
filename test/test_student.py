@@ -37,9 +37,18 @@ class MyTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             stu = t.Student('Trenary', 'Brady', 'CompSkci', 4.0)
 
-    def test_object_not_created_error_gpa(self):
+    def test_object_not_created_error_gpa_high(self):
         with self.assertRaises(ValueError):
             stu = t.Student('Trenary', 'Brady', 'CompSci', 4.9)
+
+    def test_object_not_created_error_gpa_low(self):
+        with self.assertRaises(ValueError):
+            stu = t.Student('Trenary', 'Brady', 'CompSci', -4.9)
+
+    def test_object_not_created_error_gpa_not_float(self):
+        with self.assertRaises(ValueError):
+            stu = t.Student('Trenary', 'Brady', 'CompSci', 'A')
+
 
 if __name__ == '__main__':
     unittest.main()
