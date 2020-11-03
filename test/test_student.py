@@ -34,7 +34,8 @@ class MyTestCase(unittest.TestCase):
             stu = t.Student('Trenary', 'Br1865ady', 'CompSci', 4.0)
 
     def test_object_not_created_error_major(self):
-        self.assertEqual(True, False)
+        with self.assertRaises(ValueError):
+            stu = t.Student('Trenary', 'Brady', 'CompSkci', 4.0)
 
     def test_object_not_created_error_gpa(self):
         self.assertEqual()
